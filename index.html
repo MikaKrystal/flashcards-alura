@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flashcards interativos para estudar mitos e verdades sobre tecnologia.">
+  <title>Flashcards | Mitos e Verdades</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <p class="etiqueta">ESTUDE DE UM JEITO DIFERENTE</p>
+    <h1>Mitos <span>&</span> Verdades</h1>
+    <p class="subtitulo">Vire os cartões e descubra o que é fato e o que é mito.</p>
+  </header>
+
+  <main>
+    <section class="flashcards" aria-label="Flashcards de estudo">
+      <article class="cartao">
+        <button class="cartao-interativo" type="button" aria-label="Virar cartão: HTML é uma linguagem de programação?">
+          <span class="cartao-interior">
+            <span class="face frente">
+              <span class="numero">01</span>
+              <span class="icone" aria-hidden="true">💻</span>
+              <span class="pergunta">HTML é uma linguagem de programação?</span>
+              <span class="instrucao">Toque para virar ↻</span>
+            </span>
+            <span class="face verso">
+              <span class="selo mito">MITO</span>
+              <span class="resposta">HTML é uma linguagem de marcação usada para estruturar o conteúdo de uma página. Ele não é, por si só, uma linguagem de programação.</span>
+              <span class="instrucao">Toque para voltar ↻</span>
+            </span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cartao">
+        <button class="cartao-interativo" type="button" aria-label="Virar cartão: CSS controla a aparência de uma página?">
+          <span class="cartao-interior">
+            <span class="face frente">
+              <span class="numero">02</span>
+              <span class="icone" aria-hidden="true">🎨</span>
+              <span class="pergunta">CSS ajuda a controlar a aparência de uma página?</span>
+              <span class="instrucao">Toque para virar ↻</span>
+            </span>
+            <span class="face verso">
+              <span class="selo verdade">VERDADE</span>
+              <span class="resposta">CSS define cores, fontes, espaçamentos e layouts, deixando as páginas mais organizadas e bonitas.</span>
+              <span class="instrucao">Toque para voltar ↻</span>
+            </span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cartao">
+        <button class="cartao-interativo" type="button" aria-label="Virar cartão: Flexbox organiza elementos em uma página?">
+          <span class="cartao-interior">
+            <span class="face frente">
+              <span class="numero">03</span>
+              <span class="icone" aria-hidden="true">🧩</span>
+              <span class="pergunta">Flexbox pode ajudar a alinhar elementos na página?</span>
+              <span class="instrucao">Toque para virar ↻</span>
+            </span>
+            <span class="face verso">
+              <span class="selo verdade">VERDADE</span>
+              <span class="resposta">Flexbox é um recurso do CSS que facilita distribuir, alinhar e organizar elementos em linhas ou colunas.</span>
+              <span class="instrucao">Toque para voltar ↻</span>
+            </span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cartao">
+        <button class="cartao-interativo" type="button" aria-label="Virar cartão: imagens precisam de texto alternativo?">
+          <span class="cartao-interior">
+            <span class="face frente">
+              <span class="numero">04</span>
+              <span class="icone" aria-hidden="true">🖼️</span>
+              <span class="pergunta">É importante usar texto alternativo nas imagens?</span>
+              <span class="instrucao">Toque para virar ↻</span>
+            </span>
+            <span class="face verso">
+              <span class="selo verdade">VERDADE</span>
+              <span class="resposta">O atributo alt descreve a imagem para pessoas que usam leitores de tela e também aparece se a imagem não carregar.</span>
+              <span class="instrucao">Toque para voltar ↻</span>
+            </span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cartao">
+        <button class="cartao-interativo" type="button" aria-label="Virar cartão: HTML semântico melhora a organização?">
+          <span class="cartao-interior">
+            <span class="face frente">
+              <span class="numero">05</span>
+              <span class="icone" aria-hidden="true">🧭</span>
+              <span class="pergunta">Usar tags semânticas ajuda a organizar o HTML?</span>
+              <span class="instrucao">Toque para virar ↻</span>
+            </span>
+            <span class="face verso">
+              <span class="selo verdade">VERDADE</span>
+              <span class="resposta">Tags como header, main, section e footer dão significado às partes da página e facilitam sua compreensão.</span>
+              <span class="instrucao">Toque para voltar ↻</span>
+            </span>
+          </span>
+        </button>
+      </article>
+
+      <article class="cartao">
+        <button class="cartao-interativo" type="button" aria-label="Virar cartão: hover pode criar interação visual?">
+          <span class="cartao-interior">
+            <span class="face frente">
+              <span class="numero">06</span>
+              <span class="icone" aria-hidden="true">✨</span>
+              <span class="pergunta">O efeito hover pode mudar a aparência de um elemento?</span>
+              <span class="instrucao">Toque para virar ↻</span>
+            </span>
+            <span class="face verso">
+              <span class="selo verdade">VERDADE</span>
+              <span class="resposta">A pseudoclasse :hover permite aplicar estilos quando o ponteiro está sobre um elemento. Neste projeto, os cartões também viram com um toque.</span>
+              <span class="instrucao">Toque para voltar ↻</span>
+            </span>
+          </span>
+        </button>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito para aprender, revisar e compartilhar ✦</p>
+  </footer>
+  <script>
+    document.querySelectorAll('.cartao-interativo').forEach((cartao) => {
+      cartao.addEventListener('click', () => {
+        const virado = cartao.classList.toggle('virado');
+        cartao.setAttribute('aria-pressed', String(virado));
+      });
+    });
+  </script>
+</body>
+</html>

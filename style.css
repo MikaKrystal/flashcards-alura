@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --fundo: #10132a;
+  --cartao: #20264a;
+  --texto: #f8f8ff;
+  --suave: #c7c9e8;
+  --rosa: #ff8cc6;
+  --azul: #8ee7ff;
+  --verde: #9af2c2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at 12% 15%, #39306b 0, transparent 30%),
+    radial-gradient(circle at 88% 80%, #153f5b 0, transparent 28%),
+    var(--fundo);
+}
+.cabecalho { text-align: center; padding: 54px 20px 36px; }
+.etiqueta { color: var(--azul); font-size: .75rem; font-weight: 900; letter-spacing: .22em; }
+h1 { margin: 8px 0; font-size: clamp(2.3rem, 7vw, 4.6rem); line-height: 1.1; font-weight: 900; }
+h1 span { color: var(--rosa); }
+.subtitulo { color: var(--suave); font-size: 1rem; margin: 14px auto 0; max-width: 560px; }
+.flashcards {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto 54px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+}
+.cartao { width: min(100%, 320px); height: 260px; perspective: 1000px; }
+.cartao-interativo {
+  display: block; width: 100%; height: 100%; padding: 0; border: 0;
+  border-radius: 22px; background: transparent; color: inherit; cursor: pointer;
+  text-align: center; font: inherit; perspective: 1000px;
+}
+.cartao-interior {
+  display: block; position: relative; width: 100%; height: 100%;
+  transform-style: preserve-3d; transition: transform .65s cubic-bezier(.2,.75,.25,1);
+}
+.cartao-interativo:hover .cartao-interior { transform: translateY(-4px); }
+.cartao-interativo.virado .cartao-interior { transform: rotateY(180deg); }
+.face {
+  position: absolute; inset: 0; padding: 24px; border: 1px solid #ffffff24;
+  border-radius: 22px; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 12px; backface-visibility: hidden;
+  box-shadow: 0 16px 36px #00000025;
+}
+.frente { background: linear-gradient(145deg, #292f5a, #1c2142); }
+.verso { background: linear-gradient(145deg, #29375a, #20264a); transform: rotateY(180deg); }
+.numero { position: absolute; top: 16px; left: 20px; color: #a8afd9; font-weight: 900; font-size: .8rem; }
+.icone { font-size: 2.2rem; }
+.pergunta { font-weight: 800; font-size: 1.18rem; line-height: 1.35; }
+.instrucao { color: var(--suave); font-size: .8rem; margin-top: 6px; }
+.selo { font-size: .76rem; font-weight: 900; letter-spacing: .18em; padding: 7px 12px; border-radius: 999px; }
+.mito { color: #ffd1e8; background: #a83c79; }
+.verdade { color: #092f2b; background: var(--verde); }
+.resposta { font-size: .97rem; line-height: 1.55; }
+footer { text-align: center; padding: 10px 20px 30px; color: var(--suave); font-size: .9rem; }
+button:focus-visible { outline: 3px solid var(--azul); outline-offset: 5px; }
+@media (max-width: 480px) {
+  .cabecalho { padding-top: 38px; }
+  .cartao { height: 250px; }
+  .flashcards { gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
